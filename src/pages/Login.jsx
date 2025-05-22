@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -8,7 +9,7 @@ function Login() {
 
   const login = async () => {
     try {
-      const res = await axios.post('https://full-deploy-auth-backend.onrender.com/api/auth/login', { email, password });
+      const res = await axios.post(`${BACKEND_URL}/api/auth/login`, { email, password });
       alert("You did it man");
     } catch (err) {
       alert(err.response.data.message);
