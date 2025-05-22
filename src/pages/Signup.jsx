@@ -1,28 +1,52 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import './styles/Auth.css';
+
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const signup = async () => {
+  const signup = async (e) => {
+    e.preventDefault();
     try {
       await axios.post(`${BACKEND_URL}/api/auth/signup`, { email, password });
       alert("Signup success! Please login.");
+      navigate('/login');
     } catch (err) {
-      alert(err.response.data.message);
+      alert(err.response?.data?.message || 'Signup failed');
     }
   };
 
   return (
-    <div>
-      <h2>Signup</h2>
-      <input placeholder="Email" onChange={e => setEmail(e.target.value)} />
-      <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} />
-      <button onClick={signup}>Signup</button>
-      <p>Already have an account? <Link to="/login">Login</Link></p>
+    <div className="auth-container">
+      <div className="auth-box">
+        <h2>Sign Up</h2>
+        <form onSubmit={signup}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit">Sign Up</button>
+        </form>
+        <p>
+          Already have an account?{' '}
+          <Link to="/login" className="toggle-link">Login</Link>
+        </p>
+      </div>
     </div>
   );
 }

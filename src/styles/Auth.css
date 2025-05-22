@@ -1,0 +1,86 @@
+/* Auth.css */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #7c3aed, #d8b4fe);
+  color: #fff;
+}
+
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #7c3aed, #d8b4fe);
+}
+
+.auth-box {
+  background-color: #ffffffdd;
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.7);
+  width: 350px;
+  color: #4c1d95;
+  text-align: center;
+}
+
+.auth-box h2 {
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 28px;
+  color: #6d28d9;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  box-shadow: inset 0 0 6px #d8b4fe;
+}
+
+.auth-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 25px;
+  background-color: #7c3aed;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-box button:hover {
+  background-color: #5b21b6;
+}
+
+.auth-box .toggle-link {
+  margin-top: 20px;
+  display: block;
+  color: #7c3aed;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.auth-box .toggle-link:hover {
+  color: #5b21b6;
+}
+.dashboard-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #7c3aed, #d8b4fe);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
