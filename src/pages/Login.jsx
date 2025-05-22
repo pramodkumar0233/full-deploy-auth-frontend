@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import './styles/Auth.css';
+import '../styles/Auth.css';
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
